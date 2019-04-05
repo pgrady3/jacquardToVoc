@@ -18,7 +18,7 @@ cwd=cd;
 cwd(cwd=='\')='/';
 
 % change this path to point to your copy of the PASCAL VOC data
-VOCopts.datadir=[cwd '/'];
+VOCopts.datadir=[cwd '/output/'];
 
 % change this path to a writable directory for your results
 VOCopts.resdir=[cwd '/results/' VOCopts.dataset '/'];

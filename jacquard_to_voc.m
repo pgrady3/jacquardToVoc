@@ -48,7 +48,7 @@ mkdir(img_dir); mkdir(sets_dir); mkdir(annotation_dir);
 file_names = strsplit(cmd_output);
 file_names = file_names(1:end-1);
 
-%file_names = file_names(1:10);%CUT for debugging
+file_names = file_names(1:1000);%CUT for debugging
 
 split_index = round(length(file_names) * 0.8);
 

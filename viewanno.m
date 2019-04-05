@@ -1,14 +1,16 @@
 function viewanno(imgset)
 
 if nargin<1
-    error(['usage: viewanno(imgset) e.g. viewanno(' 39 'Main/train' 39 ') ' ...
-            'or viewanno(' 39 'Main/car_train' 39 ')']);
+    fprintf(['usage: viewanno(imgset) e.g. viewanno(' 39 'Main/train' 39 ') ' ...
+            'or viewanno(' 39 'Main/car_train' 39 ')\n']);
+        
+    imgset = 'trainval';
 end
 
-addpath ../..
+%addpath ../..
 
 % change this path if you install the VOC code elsewhere
-addpath([cd '/VOCcode']);
+addpath([cd '/VOCdevkit2007/VOCcode']);
 
 DRAW_ANGLE = true;
 ANGLE_CLASSES = 19;
