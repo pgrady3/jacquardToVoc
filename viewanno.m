@@ -14,6 +14,7 @@ addpath([cd '/VOCdevkit2007/VOCcode']);
 
 DRAW_ANGLE = true;
 ANGLE_CLASSES = 19;
+SPARSE = 0.2; %keep only a fraction of bbs so you can actually see...
 
 % initialize VOC options
 VOCinit;
@@ -47,9 +48,15 @@ for i=1:length(ids)
         clf;
     end
     
+    fprintf("Image no %d, %d bbs \n", i, length(rec.objects));
+    
     imshow(I);
     hold on;
     for j=1:length(rec.objects)
+        if rand() > SPARSE
+            continue
+        end
+        
         bb=rec.objects(j).bbox;
         if rec.objects(j).difficult
             ls='y'; % "difficult": yellow
